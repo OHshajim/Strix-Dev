@@ -1,15 +1,289 @@
 @import "tailwindcss";
 
+/* Strix Dev Design System - Bold Monochrome Edition */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Pure Black & White palette */
+  --background: 0 0% 3%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3%;
+  --popover-foreground: 0 0% 98%;
+  /* Primary - Pure White accent */
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
+  /* Secondary - Dark gray */
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 10%;
+  --muted-foreground: 0 0% 55%;
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 18%;
+  --input: 0 0% 15%;
+  --ring: 0 0% 100%;
+  --radius: 0rem;
+  /* Custom tokens */
+  --noise-opacity: 0.03;
+
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.4, 0, 0, 1) forwards;
+  --animate-scale-in: scale-in 0.6s cubic-bezier(0.4, 0, 0, 1) forwards;
+  --animate-slide-in: slide-in 0.8s cubic-bezier(0.4, 0, 0, 1) forwards;
+  --animate-line-reveal: line-reveal 0.8s cubic-bezier(0.4, 0, 0, 1) forwards;
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: none;
+  }
+
+  ::selection {
+    background-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+}
+
+@layer utilities {
+
+  /* Noise overlay texture */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: var(--noise-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Brutal borders */
+  .brutal-border {
+    border: 2px solid hsl(var(--foreground));
+  }
+
+  .brutal-border-thin {
+    border: 1px solid hsl(var(--foreground) / 0.2);
+  }
+
+  /* Glass effect - monochrome */
+  .glass {
+    background: hsl(0 0% 8% / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--foreground) / 0.08);
+  }
+
+  .glass-card {
+    background: linear-gradient(145deg, hsl(0 0% 8% / 0.6) 0%, hsl(0 0% 5% / 0.4) 100%);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--foreground) / 0.06);
+  }
+
+  /* Text styles */
+  .text-outline {
+    -webkit-text-stroke: 1px hsl(var(--foreground));
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-outline-thick {
+    -webkit-text-stroke: 2px hsl(var(--foreground));
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glitch effect */
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    animation: glitch-1 2s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translateX(-2px);
+    opacity: 0.8;
+  }
+
+  .glitch::after {
+    animation: glitch-2 3s infinite linear alternate-reverse;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translateX(2px);
+    opacity: 0.8;
+  }
+
+  /* Premium button styles */
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--background));
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1);
+  }
+
+  .btn-primary:hover::before {
+    transform: translateY(0);
+  }
+
+  .btn-primary:hover {
+    color: hsl(var(--foreground));
+  }
+
+  .btn-primary span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-outline {
+    position: relative;
+    overflow: hidden;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border: 1px solid hsl(var(--foreground) / 0.4);
+    color: hsl(var(--foreground));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-outline:hover {
+    background: hsl(var(--foreground) / 0.05);
+    border-color: hsl(var(--foreground));
+  }
+
+  /* Magnetic hover effect container */
+  .magnetic {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Line reveal animation */
+  .line-reveal>* {
+    transform: translateY(100%);
+    animation: line-reveal 0.8s cubic-bezier(0.4, 0, 0, 1) forwards;
+  }
+
+  /* Horizontal line decorations */
+  .line-horizontal {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.3), transparent);
+  }
+
+  .line-vertical {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, hsl(var(--foreground) / 0.3), transparent);
+  }
+
+  /* Grid pattern */
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(var(--foreground) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Card styles */
+  .card-hover {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px -20px hsl(var(--foreground) / 0.1);
+  }
+
+  /* Link underline */
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: hsl(var(--foreground));
+    transition: width 0.4s cubic-bezier(0.4, 0, 0, 1);
+  }
+
+  .link-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Font utilities */
+  .font-display {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .font-heading {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Text scramble placeholder */
+  .text-scramble {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Number counter style */
+  .number-display {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+  /* Stagger children */
+  .stagger-children>* {
+    opacity: 0;
+    transform: translateY(30px);
   }
 }

@@ -1,0 +1,180 @@
+import { motion } from "framer-motion";
+import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
+
+const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
+    const socialLinks = [
+        {
+            icon: Linkedin,
+            href: "https://linkedin.com/company/strixdev",
+            label: "LinkedIn",
+        },
+        {
+            icon: Twitter,
+            href: "https://twitter.com/strixdev",
+            label: "Twitter",
+        },
+        { icon: Github, href: "https://github.com/strixdev", label: "GitHub" },
+        {
+            icon: Instagram,
+            href: "https://instagram.com/strixdev",
+            label: "Instagram",
+        },
+    ];
+
+    const footerLinks = {
+        Services: [
+            { name: "Web Development", href: "#services" },
+            { name: "E-Commerce", href: "#services" },
+            { name: "UI/UX Design", href: "#services" },
+            { name: "Backend APIs", href: "#services" },
+        ],
+        Company: [
+            { name: "About Us", href: "#about" },
+            { name: "Our Work", href: "#work" },
+            { name: "Contact", href: "#contact" },
+        ],
+    };
+
+    return (
+        <footer className="relative pt-20 pb-10 overflow-hidden bg-background">
+            {/* Top border */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-border" />
+            <div className="noise-overlay" />
+
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    {/* Brand column */}
+                    <div className="lg:col-span-2">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="flex items-center gap-3 mb-6"
+                        >
+                            {/* Logo */}
+                            <svg
+                                viewBox="0 0 40 40"
+                                fill="none"
+                                className="w-10 h-10"
+                            >
+                                <rect
+                                    x="2"
+                                    y="2"
+                                    width="36"
+                                    height="36"
+                                    className="stroke-foreground"
+                                    strokeWidth="1"
+                                    fill="none"
+                                />
+                                <circle
+                                    cx="14"
+                                    cy="16"
+                                    r="4"
+                                    className="fill-foreground"
+                                />
+                                <circle
+                                    cx="26"
+                                    cy="16"
+                                    r="4"
+                                    className="fill-foreground"
+                                />
+                                <path
+                                    d="M14 28 L20 34 L26 28"
+                                    className="stroke-foreground"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="square"
+                                    fill="none"
+                                />
+                            </svg>
+                            <span className="text-xl font-display tracking-tight">
+                                STRIX
+                                <span className="text-muted-foreground font-body font-light ml-1">
+                                    DEV
+                                </span>
+                            </span>
+                        </motion.div>
+                        <p className="text-muted-foreground text-sm max-w-md mb-8 leading-relaxed">
+                            Smart, secure, and scalable web applications for
+                            startups and small businesses. Transform your ideas
+                            into powerful digital experiences.
+                        </p>
+
+                        {/* Social links */}
+                        <div className="flex gap-3">
+                            {socialLinks.map((social) => (
+                                <motion.a
+                                    key={social.label}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ y: -3 }}
+                                    className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all duration-300"
+                                    aria-label={social.label}
+                                >
+                                    <social.icon className="w-4 h-4" />
+                                </motion.a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Links columns */}
+                    {Object.entries(footerLinks).map(([title, links]) => (
+                        <div key={title}>
+                            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-6">
+                                {title}
+                            </h4>
+                            <ul className="space-y-4">
+                                {links.map((link) => (
+                                    <li key={link.name}>
+                                        <a
+                                            href={link.href}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                document
+                                                    .querySelector(link.href)
+                                                    ?.scrollIntoView({
+                                                        behavior: "smooth",
+                                                    });
+                                            }}
+                                            className="text-sm text-foreground/70 hover:text-foreground transition-colors link-underline"
+                                        >
+                                            {link.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Bottom bar */}
+                <div className="pt-10 border-t border-border">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p className="text-xs font-mono text-muted-foreground">
+                            © {currentYear} Strix Dev. All rights reserved.
+                        </p>
+                        <div className="flex gap-8">
+                            <a
+                                href="#"
+                                className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                                Privacy Policy
+                            </a>
+                            <a
+                                href="#"
+                                className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                                Terms of Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

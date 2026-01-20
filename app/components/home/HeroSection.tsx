@@ -1,0 +1,249 @@
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { ArrowDownRight } from "lucide-react";
+
+const HeroSection = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"],
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+    return (
+        <section
+            ref={containerRef}
+            id="home"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+        >
+            {/* Grid pattern background */}
+            <div className="absolute inset-0 grid-pattern" />
+
+            {/* Noise overlay */}
+            <div className="noise-overlay" />
+
+            {/* Animated corner lines */}
+            <div className="absolute top-0 left-0 w-32 h-32">
+                <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0.5,
+                        ease: [0.4, 0, 0, 1],
+                    }}
+                    className="absolute top-8 left-8 w-16 h-px bg-foreground/40 origin-left"
+                />
+                <motion.div
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: 1 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0.6,
+                        ease: [0.4, 0, 0, 1],
+                    }}
+                    className="absolute top-8 left-8 w-px h-16 bg-foreground/40 origin-top"
+                />
+            </div>
+            <div className="absolute bottom-0 right-0 w-32 h-32">
+                <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0.7,
+                        ease: [0.4, 0, 0, 1],
+                    }}
+                    className="absolute bottom-8 right-8 w-16 h-px bg-foreground/40 origin-right"
+                />
+                <motion.div
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: 1 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0.8,
+                        ease: [0.4, 0, 0, 1],
+                    }}
+                    className="absolute bottom-8 right-8 w-px h-16 bg-foreground/40 origin-bottom"
+                />
+            </div>
+
+            {/* Floating number */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.03 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="absolute right-10 top-1/3 text-[20rem] font-display leading-none select-none pointer-events-none hidden lg:block"
+            >
+                01
+            </motion.div>
+
+            {/* Content */}
+            <motion.div
+                style={{ y, opacity }}
+                className="container mx-auto px-6 relative z-10 pt-20"
+            >
+                <div className="max-w-5xl">
+                    {/* Status badge */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="flex items-center gap-3 mb-8"
+                    >
+                        <div className="w-2 h-2 bg-foreground animate-pulse" />
+                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
+                            Available for Projects
+                        </span>
+                    </motion.div>
+
+                    {/* Main headline - with text reveal effect */}
+                    <div className="overflow-hidden mb-4">
+                        <motion.h1
+                            initial={{ y: 100 }}
+                            animate={{ y: 0 }}
+                            transition={{
+                                duration: 0.8,
+                                delay: 0.2,
+                                ease: [0.4, 0, 0, 1],
+                            }}
+                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display leading-[0.9] tracking-tight"
+                        >
+                            WE BUILD
+                        </motion.h1>
+                    </div>
+                    <div className="overflow-hidden mb-4">
+                        <motion.h1
+                            initial={{ y: 100 }}
+                            animate={{ y: 0 }}
+                            transition={{
+                                duration: 0.8,
+                                delay: 0.3,
+                                ease: [0.4, 0, 0, 1],
+                            }}
+                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display leading-[0.9] tracking-tight text-outline-thick"
+                        >
+                            DIGITAL
+                        </motion.h1>
+                    </div>
+                    <div className="overflow-hidden mb-8">
+                        <motion.h1
+                            initial={{ y: 100 }}
+                            animate={{ y: 0 }}
+                            transition={{
+                                duration: 0.8,
+                                delay: 0.4,
+                                ease: [0.4, 0, 0, 1],
+                            }}
+                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display leading-[0.9] tracking-tight"
+                        >
+                            EXPERIENCES
+                        </motion.h1>
+                    </div>
+
+                    {/* Subheadline */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-12"
+                    >
+                        <p className="text-lg md:text-xl text-muted-foreground max-w-lg font-body leading-relaxed">
+                            Smart, secure, and scalable web applications for
+                            startups and small businesses. Transforming ideas
+                            into powerful digital products.
+                        </p>
+
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <motion.a
+                                href="#contact"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    document
+                                        .querySelector("#contact")
+                                        ?.scrollIntoView({
+                                            behavior: "smooth",
+                                        });
+                                }}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="btn-primary flex items-center gap-3"
+                            >
+                                <span>Start Project</span>
+                                <ArrowDownRight className="w-4 h-4" />
+                            </motion.a>
+                            <motion.a
+                                href="#work"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    document
+                                        .querySelector("#work")
+                                        ?.scrollIntoView({
+                                            behavior: "smooth",
+                                        });
+                                }}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="btn-outline flex items-center justify-center gap-3"
+                            >
+                                View Work
+                            </motion.a>
+                        </div>
+                    </motion.div>
+
+                    {/* Stats row */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.8 }}
+                        className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-border"
+                    >
+                        {[
+                            { value: "50+", label: "Projects" },
+                            { value: "98%", label: "Satisfaction" },
+                            { value: "5+", label: "Years" },
+                        ].map((stat, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.9 + index * 0.1 }}
+                            >
+                                <div className="text-3xl md:text-4xl lg:text-5xl font-display mb-2 number-display">
+                                    {stat.value}
+                                </div>
+                                <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                                    {stat.label}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
+            </motion.div>
+
+            {/* Scroll indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 0.6 }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            >
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="flex flex-col items-center gap-3"
+                >
+                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                        Scroll
+                    </span>
+                    <div className="w-px h-10 bg-gradient-to-b from-foreground/60 to-transparent" />
+                </motion.div>
+            </motion.div>
+        </section>
+    );
+};
+
+export default HeroSection;
