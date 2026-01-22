@@ -137,7 +137,7 @@ const Projects = () => {
                                 <div
                                     className={`relative overflow-hidden ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
                                 >
-                                    <div className="aspect-[4/3] relative overflow-hidden">
+                                    <div className="aspect-4/3 relative overflow-hidden">
                                         <motion.img
                                             src={project.image}
                                             alt={project.title}
