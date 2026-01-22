@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Link } from "react-router";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -25,15 +26,17 @@ const Footer = () => {
 
     const footerLinks = {
         Services: [
-            { name: "Web Development", href: "#services" },
-            { name: "E-Commerce", href: "#services" },
-            { name: "UI/UX Design", href: "#services" },
-            { name: "Backend APIs", href: "#services" },
+            { name: "Web Development", href: "/services/#web-development" },
+            { name: "E-Commerce", href: "/services/#e-commerce" },
+            { name: "UI/UX Design", href: "/services/#ui-ux-design" },
+            { name: "Backend APIs", href: "/services/#backend-apis" },
         ],
         Company: [
-            { name: "About Us", href: "#about" },
-            { name: "Our Work", href: "#work" },
-            { name: "Contact", href: "#contact" },
+            { name: "Home", href: "/" },
+            { name: "About Us", href: "/about" },
+            { name: "Services", href: "/services" },
+            { name: "Our Work", href: "/work" },
+            { name: "Contact", href: "/contact" },
         ],
     };
 
@@ -128,21 +131,14 @@ const Footer = () => {
                             </h4>
                             <ul className="space-y-4">
                                 {links.map((link) => (
-                                    <li key={link.name}>
-                                        <a
-                                            href={link.href}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                document
-                                                    .querySelector(link.href)
-                                                    ?.scrollIntoView({
-                                                        behavior: "smooth",
-                                                    });
-                                            }}
-                                            className="text-sm text-foreground/70 hover:text-foreground transition-colors link-underline"
+                                    <li key={link.name}
+                                        className="text-sm text-foreground/70 hover:text-foreground transition-colors link-underline"
+                                    >
+                                        <Link
+                                            to={link.href}
                                         >
                                             {link.name}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -157,18 +153,18 @@ const Footer = () => {
                             © {currentYear} Strix Dev. All rights reserved.
                         </p>
                         <div className="flex gap-8">
-                            <a
-                                href="#"
+                            <Link
+                                to="#"
                                 className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 Privacy Policy
-                            </a>
-                            <a
-                                href="#"
+                            </Link>
+                            <Link
+                                to="#"
                                 className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 Terms of Service
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

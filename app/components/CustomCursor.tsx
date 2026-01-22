@@ -67,7 +67,7 @@ const CustomCursor = () => {
         <>
             {/* Main cursor - crosshair style */}
             <motion.div
-                className="fixed top-0 left-0 pointer-events-none z-[9999]"
+                className="fixed top-0 left-0 pointer-events-none z-9999"
                 style={{
                     x: cursorX,
                     y: cursorY,
@@ -82,7 +82,7 @@ const CustomCursor = () => {
             >
                 {/* Vertical line */}
                 <motion.div
-                    className="absolute left-1/2 -translate-x-1/2 w-px bg-foreground"
+                    className="absolute left-1/2 -translate-x-1/2 w-px bg-white"
                     animate={{
                         height: isHovering ? 40 : 20,
                         opacity: isHovering ? 1 : 0.6,
@@ -91,7 +91,7 @@ const CustomCursor = () => {
                 />
                 {/* Horizontal line */}
                 <motion.div
-                    className="absolute top-1/2 -translate-y-1/2 h-px bg-foreground"
+                    className="absolute top-1/2 -translate-y-1/2 h-px bg-white"
                     animate={{
                         width: isHovering ? 40 : 20,
                         opacity: isHovering ? 1 : 0.6,
@@ -102,7 +102,7 @@ const CustomCursor = () => {
 
             {/* Outer ring */}
             <motion.div
-                className="fixed top-0 left-0 pointer-events-none z-[9998]"
+                className="fixed top-0 left-0 pointer-events-none z-9999"
                 style={{
                     x: mousePosition.x,
                     y: mousePosition.y,
