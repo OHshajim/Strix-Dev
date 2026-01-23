@@ -131,14 +131,11 @@ const Footer = () => {
                             </h4>
                             <ul className="space-y-4">
                                 {links.map((link) => (
-                                    <li key={link.name}
-                                        className="text-sm text-foreground/70 hover:text-foreground transition-colors link-underline"
+                                    <li
+                                        key={link.name}
+                                        className=" relative w-fit text-sm text-foreground/70 hover:text-foreground transition-colors link-underline"
                                     >
-                                        <Link
-                                            to={link.href}
-                                        >
-                                            {link.name}
-                                        </Link>
+                                        <Link to={link.href}>{link.name}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -154,13 +151,13 @@ const Footer = () => {
                         </p>
                         <div className="flex gap-8">
                             <Link
-                                to="#"
+                                to="/privacy-policy"
                                 className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 Privacy Policy
                             </Link>
                             <Link
-                                to="#"
+                                to="/terms-of-service"
                                 className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 Terms of Service

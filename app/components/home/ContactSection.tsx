@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import {
-    ArrowUpRight,
-    Mail,
-    MessageCircle,
-    Linkedin,
-    MapPin,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { contactInfo } from "~/Data/data";
+import { SendEmail } from "~/lib/email";
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -20,16 +16,20 @@ const ContactSection = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
-
-        // Reset success message after 5 seconds
-        setTimeout(() => setIsSubmitted(false), 5000);
+        try {
+            await SendEmail(formData);
+            setFormData({
+                name: "",
+                email: "",
+                message: "",
+            });
+            setIsSubmitted(false)
+        } catch (error) {
+            console.error("EmailJS error:", error);
+            alert("Failed to send message. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (
@@ -38,32 +38,7 @@ const ContactSection = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const contactLinks = [
-        {
-            icon: Mail,
-            label: "Email",
-            value: "hello@strixdev.com",
-            href: "mailto:hello@strixdev.com",
-        },
-        {
-            icon: MessageCircle,
-            label: "WhatsApp",
-            value: "+1 (555) 123-4567",
-            href: "https://wa.me/15551234567",
-        },
-        {
-            icon: Linkedin,
-            label: "LinkedIn",
-            value: "Strix Dev",
-            href: "https://linkedin.com/company/strixdev",
-        },
-        {
-            icon: MapPin,
-            label: "Location",
-            value: "Toronto, Canada",
-            href: "#",
-        },
-    ];
+
 
     return (
         <section
@@ -210,7 +185,7 @@ const ContactSection = () => {
 
                         {/* Contact links */}
                         <div className="space-y-0">
-                            {contactLinks.map((link, index) => (
+                            {contactInfo.map((link, index) => (
                                 <motion.a
                                     key={link.label}
                                     href={link.href}
@@ -250,7 +225,7 @@ const ContactSection = () => {
                         </div>
 
                         {/* Business hours */}
-                        <div className="pt-10 border-t border-border">
+                        <div className="pt-10">
                             <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
                                 Business Hours
                             </h4>

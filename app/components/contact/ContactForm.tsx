@@ -1,79 +1,46 @@
-import { ArrowUpRight, Clock, Linkedin, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
-import { motion } from "framer-motion";
 import { useState } from 'react';
-const contactInfo = [
-    {
-        icon: Mail,
-        label: "Email",
-        value: "hello@strixdev.com",
-        href: "mailto:hello@strixdev.com",
-    },
-    {
-        icon: Phone,
-        label: "Phone",
-        value: "+1 (416) 555-0123",
-        href: "tel:+14165550123",
-    },
-    {
-        icon: MessageCircle,
-        label: "WhatsApp",
-        value: "+1 (416) 555-0123",
-        href: "https://wa.me/14165550123",
-    },
-    {
-        icon: Linkedin,
-        label: "LinkedIn",
-        value: "Strix Dev",
-        href: "https://linkedin.com/company/strixdev",
-    },
-    {
-        icon: MapPin,
-        label: "Office",
-        value: "Toronto, Canada",
-        href: "#",
-    },
-    {
-        icon: Clock,
-        label: "Hours",
-        value: "Mon-Fri 9AM-6PM EST",
-        href: "#",
-    },
-];
+import { motion } from "framer-motion";
+import { ArrowUpRight} from 'lucide-react';
+import { contactInfo } from '~/Data/data';
+import { SendEmail } from '~/lib/email';
 
 const ContactForm = () => {
-        const [formData, setFormData] = useState({
-            name: "",
-            email: "",
-            company: "",
-            budget: "",
-            message: "",
-        });
-        const [isSubmitting, setIsSubmitting] = useState(false);
-        const [isSubmitted, setIsSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-        const handleSubmit = async (e: React.FormEvent) => {
-            e.preventDefault();
-            setIsSubmitting(true);
-            await new Promise((resolve) => setTimeout(resolve, 1500));
-            setIsSubmitting(false);
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        try {
             setIsSubmitted(true);
+            await SendEmail(formData);
+
             setFormData({
                 name: "",
                 email: "",
-                company: "",
-                budget: "",
                 message: "",
             });
-            setTimeout(() => setIsSubmitted(false), 5000);
-        };
+        } catch (error) {
+            console.error("EmailJS error:", error);
+            alert("Failed to send message. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
-        const handleChange = (
-            e: React.ChangeEvent<
-                HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-            >,
-        ) => {
-            setFormData({ ...formData, [e.target.name]: e.target.value });
-        };
+    const handleChange = (
+        e: React.ChangeEvent<
+            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >,
+    ) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
     return (
         <section className="py-20 relative">
             <div className="container mx-auto px-6">
@@ -126,53 +93,6 @@ const ContactForm = () => {
                                         className="w-full px-0 py-4 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
                                         placeholder="john@company.com"
                                     />
-                                </div>
-                            </div>
-
-                            <div className="grid md:grid-cols-2 gap-8">
-                                <div>
-                                    <label
-                                        htmlFor="company"
-                                        className="block text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-3"
-                                    >
-                                        Company
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="company"
-                                        name="company"
-                                        value={formData.company}
-                                        onChange={handleChange}
-                                        className="w-full px-0 py-4 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
-                                        placeholder="Your Company"
-                                    />
-                                </div>
-                                <div>
-                                    <label
-                                        htmlFor="budget"
-                                        className="block text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-3"
-                                    >
-                                        Budget Range
-                                    </label>
-                                    <select
-                                        id="budget"
-                                        name="budget"
-                                        value={formData.budget}
-                                        onChange={handleChange}
-                                        className="w-full px-0 py-4 bg-transparent border-0 border-b border-border text-foreground focus:outline-none focus:border-foreground transition-colors"
-                                    >
-                                        <option value="">Select budget</option>
-                                        <option value="5k-10k">
-                                            $5,000 - $10,000
-                                        </option>
-                                        <option value="10k-25k">
-                                            $10,000 - $25,000
-                                        </option>
-                                        <option value="25k-50k">
-                                            $25,000 - $50,000
-                                        </option>
-                                        <option value="50k+">$50,000+</option>
-                                    </select>
                                 </div>
                             </div>
 

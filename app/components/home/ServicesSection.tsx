@@ -1,45 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Globe, Smartphone, ShoppingCart, Palette, Server } from "lucide-react";
-
-const services = [
-    {
-        icon: Globe,
-        title: "Web Development",
-        description:
-            "Custom websites and web applications built with modern technologies. Fast, responsive, and SEO-optimized.",
-        number: "01",
-    },
-    {
-        icon: Smartphone,
-        title: "Mobile-First Design",
-        description:
-            "Responsive designs that look stunning on every device. Progressive web apps for native-like experiences.",
-        number: "02",
-    },
-    {
-        icon: ShoppingCart,
-        title: "E-Commerce",
-        description:
-            "Secure online stores with seamless payment integration. Shopify, WooCommerce, and custom solutions.",
-        number: "03",
-    },
-    {
-        icon: Palette,
-        title: "UI/UX Design",
-        description:
-            "Beautiful, intuitive interfaces that convert visitors into customers. User-centered design approach.",
-        number: "04",
-    },
-    {
-        icon: Server,
-        title: "Backend & APIs",
-        description:
-            "Scalable server infrastructure and RESTful APIs. Database design and cloud deployment.",
-        number: "05",
-    },
-];
+import { services } from "~/Data/data";
 
 const ServicesSection = () => {
     const ref = useRef(null);

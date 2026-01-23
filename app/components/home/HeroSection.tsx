@@ -73,7 +73,7 @@ const HeroSection = () => {
             {/* Floating number */}
             <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.03 }}
+                animate={{ opacity: 0.15 }}
                 transition={{ duration: 1, delay: 1 }}
                 className="absolute right-10 top-1/3 text-[20rem] font-display leading-none select-none pointer-events-none hidden lg:block"
             >
@@ -148,7 +148,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-12"
+                        className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-8"
                     >
                         <p className="text-lg md:text-xl text-muted-foreground max-w-lg font-body leading-relaxed">
                             Smart, secure, and scalable web applications for
@@ -199,12 +199,12 @@ const HeroSection = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
-                        className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-border"
+                        className="grid grid-cols-3 gap-8 mt-12 pt-5 border-t border-border"
                     >
                         {[
-                            { value: "50+", label: "Projects" },
+                            { value: "20+", label: "Projects" },
                             { value: "98%", label: "Satisfaction" },
-                            { value: "5+", label: "Years" },
+                            { value: "2+", label: "Years" },
                         ].map((stat, index) => (
                             <motion.div
                                 key={index}

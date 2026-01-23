@@ -20,7 +20,7 @@ const AboutSection = () => {
             {/* Large background text */}
             <motion.div
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 0.02 }}
+                whileInView={{ opacity: 0.05 }}
                 viewport={{ once: true }}
                 className="absolute right-0 top-1/3 text-[12rem] font-display leading-none select-none pointer-events-none hidden xl:block"
             >
@@ -234,7 +234,6 @@ const AboutSection = () => {
                             the test of time.
                         </p>
 
-                        {/* Benefits grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                             {benefits.map((benefit, index) => (
                                 <motion.div
@@ -254,7 +253,6 @@ const AboutSection = () => {
                             ))}
                         </div>
 
-                        {/* CTA */}
                         <motion.a
                             href="#contact"
                             onClick={(e) => {
