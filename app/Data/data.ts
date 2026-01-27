@@ -11,7 +11,6 @@ import {
     MessageCircle,
     Linkedin,
     MapPin,
-    Phone,
     Clock,
 } from "lucide-react";
 
@@ -133,6 +132,27 @@ export const services = [
 
 export const projects = [
     {
+        title: "CallBell",
+        category: "SaaS",
+        description:
+            "QR-based real-time voice and video calling platform enabling instant, secure communication with enterprise-grade encryption, global connectivity, and usage-based plans.",
+        techStack: [
+            "React.js",
+            "TypeScript",
+            "Redux",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Socket.io",
+            "Live Kit",
+            "paygic",
+            "Razorpay",
+        ],
+        image: "https://i.ibb.co.com/Z6QzdVwP/callbell.png",
+        year: "2025",
+        link: "https://callbell.in/",
+    },
+    {
         title: "Sewamahe",
         category: "SaaS",
         description:
@@ -154,25 +174,22 @@ export const projects = [
         link: "https://sawamahe-frontend.vercel.app/",
     },
     {
-        title: "CallBell",
-        category: "SaaS",
+        title: "Master Tools BD",
+        category: "Subscription Platform",
         description:
-            "QR-based real-time voice and video calling platform enabling instant, secure communication with enterprise-grade encryption, global connectivity, and usage-based plans.",
+            "Master Tools BD is a digital subscription platform that provides affordable access to premium learning tools like Udemy, Coursera, Codecademy, and more through custom education plans, all managed from one place.",
         techStack: [
             "React.js",
             "TypeScript",
-            "Redux",
             "Node.js",
             "Express.js",
             "MongoDB",
             "Socket.io",
-            "Live Kit",
-            "paygic",
-            "Razorpay",
         ],
-        image: "https://i.ibb.co.com/Z6QzdVwP/callbell.png",
+        image: "https://i.ibb.co.com/NHN49Z2/mastertools.png",
         year: "2025",
-        link: "https://callbell.in/",
+        client: "LearnPath Education",
+        link: "https://mastertoolsbd.com/",
     },
     {
         title: "PrimePix",
@@ -200,24 +217,6 @@ export const projects = [
         image: "https://i.ibb.co.com/YFb7DpQp/akatsuki.png",
         year: "2025",
         link: "https://akatsuki-ivory.vercel.app/",
-    },
-    {
-        title: "Master Tools BD",
-        category: "Subscription Platform",
-        description:
-            "Master Tools BD is a digital subscription platform that provides affordable access to premium learning tools like Udemy, Coursera, Codecademy, and more through custom education plans, all managed from one place.",
-        techStack: [
-            "React.js",
-            "TypeScript",
-            "Node.js",
-            "Express.js",
-            "MongoDB",
-            "Socket.io",
-        ],
-        image: "https://i.ibb.co.com/NHN49Z2/mastertools.png",
-        year: "2025",
-        client: "LearnPath Education",
-        link: "https://mastertoolsbd.com/",
     },
     {
         title: "Save Life",
@@ -276,8 +275,9 @@ export const team = [
         image: "https://i.ibb.co/Gfqj4gXZ/Shamim.jpg",
         bio: "Full-stack developer and tech entrepreneur with 3+ years of experience building scalable web applications and leading development teams. Passionate about clean code, modern JS frameworks, and seamless UX.",
         social: {
-            linkedin: "https://www.linkedin.com/in/shamimhossain",
-            github: "https://github.com/shamimhossain",
+            linkedin:
+                "https://www.linkedin.com/in/shamim-hossain-srabon-4154892a8/",
+            github: "https://github.com/ShamimHossain1",
         },
     },
     {
@@ -286,8 +286,8 @@ export const team = [
         image: "https://i.ibb.co.com/PvMGv84j/tanjil.jpg",
         bio: "Full-stack developer with expertise in both frontend and backend technologies. Skilled in building responsive UIs, designing robust APIs, and creating seamless end-to-end solutions.",
         social: {
-            linkedin: "https://www.linkedin.com/in/tanjilahmed",
-            github: "https://github.com/tanjilahmed",
+            linkedin: "https://www.linkedin.com/in/tanjil-ahamed/",
+            github: "https://github.com/tanjilahamed99",
         },
     },
     {
@@ -297,7 +297,7 @@ export const team = [
         bio: "Full-stack developer specializing in scalable backend systems and interactive frontend applications. Experienced in Node.js, React/Next.js, and optimizing database architectures.",
         social: {
             linkedin: "https://www.linkedin.com/in/shajim-ahmed/",
-            github: "https://github.com//OHshajim",
+            github: "https://github.com/OHshajim",
         },
     },
 ];
@@ -306,37 +306,25 @@ export const contactInfo = [
     {
         icon: Mail,
         label: "Email",
-        value: "hello@strixdev.com",
-        href: "mailto:hello@strixdev.com",
+        value: "shamimweb78@gmail.com",
+        href: "mailto:shamimweb78@gmail.com",
     },
-    // {
-    //     icon: Phone,
-    //     label: "Phone",
-    //     value: "+1 (416) 555-0123",
-    //     href: "tel:+14165550123",
-    // },
     {
         icon: MessageCircle,
         label: "WhatsApp",
-        value: "+1 (416) 555-0123",
+        value: "+1 (437) 955-7898",
         href: "https://wa.me/14165550123",
     },
-    // {
-    //     icon: Linkedin,
-    //     label: "LinkedIn",
-    //     value: "Strix Dev",
-    //     href: "https://linkedin.com/company/strixdev",
-    // },
+    {
+        icon: Linkedin,
+        label: "LinkedIn",
+        value: "Strix Dev",
+        href: "https://www.linkedin.com/company/strix-dev",
+    },
     {
         icon: MapPin,
         label: "Office",
         value: "Toronto, Canada",
-        href: "#",
-    },
-    {
-        icon: Clock,
-        label: "Hours",
-        value: "Mon-Fri 9AM-6PM EST",
         href: "#",
     },
 ];

@@ -58,40 +58,11 @@ const Footer = () => {
                             className="flex items-center gap-3 mb-6"
                         >
                             {/* Logo */}
-                            <svg
-                                viewBox="0 0 40 40"
-                                fill="none"
-                                className="w-10 h-10"
-                            >
-                                <rect
-                                    x="2"
-                                    y="2"
-                                    width="36"
-                                    height="36"
-                                    className="stroke-foreground"
-                                    strokeWidth="1"
-                                    fill="none"
-                                />
-                                <circle
-                                    cx="14"
-                                    cy="16"
-                                    r="4"
-                                    className="fill-foreground"
-                                />
-                                <circle
-                                    cx="26"
-                                    cy="16"
-                                    r="4"
-                                    className="fill-foreground"
-                                />
-                                <path
-                                    d="M14 28 L20 34 L26 28"
-                                    className="stroke-foreground"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="square"
-                                    fill="none"
-                                />
-                            </svg>
+                            <img
+                                src="https://i.ibb.co.com/sJM47XhW/icon1.png"
+                                className="w-14"
+                                loading="lazy"
+                            />
                             <span className="text-xl font-display tracking-tight">
                                 STRIX
                                 <span className="text-muted-foreground font-body font-light ml-1">

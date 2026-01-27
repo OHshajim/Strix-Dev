@@ -17,7 +17,7 @@ export default function Work() {
         <main>
             <HeroSection />
             <Projects />
-            <WorkStats />
+            {/* <WorkStats /> */}
             <WorkCTA />
         </main>
     );

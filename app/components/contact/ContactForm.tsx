@@ -182,6 +182,16 @@ const ContactForm = () => {
                                 </motion.a>
                             ))}
                         </div>
+                        <div className="pt-10">
+                            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                                Business Hours
+                            </h4>
+                            <p className="text-muted-foreground">
+                                Monday - Friday: 9:00 AM - 6:00 PM EST
+                                <br />
+                                Weekend availability by appointment
+                            </p>
+                        </div>
                     </motion.div>
                 </div>
             </div>

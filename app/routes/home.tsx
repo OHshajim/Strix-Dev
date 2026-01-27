@@ -8,7 +8,7 @@ import ContactSection from "~/components/home/ContactSection";
 export function meta({}: Route.MetaArgs) {
     return [
         { title: "Strix Dev || Home " },
-        { name: "description", content: "Welcome to Strix Dev" },
+        { name: "description", content: "Welcome to Strix Dev" }
     ];
 }
 

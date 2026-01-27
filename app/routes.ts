@@ -6,7 +6,7 @@ export default [
     route("services", "routes/services.tsx"),
     route("work", "routes/work.tsx"),
     route("contact", "routes/contact.tsx"),
-    route("privacy-policy", "routes/PrivacyPolicy.tsx"),
-    route("terms-of-service", "routes/TermsOfService.tsx"),
+    route("privacy-policy", "routes/privacypolicy.tsx"),
+    route("terms-of-service", "routes/termsofservice.tsx"),
     route("*", "routes/not-found.tsx"),
 ] satisfies RouteConfig;

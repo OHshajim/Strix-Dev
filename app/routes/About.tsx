@@ -25,7 +25,7 @@ export default function About() {
             <Team />
 
             {/* Timeline Section */}
-            <AboutTImeline />
+            {/* <AboutTImeline /> */}
 
             {/* CTA Section */}
             <AboutCTA />

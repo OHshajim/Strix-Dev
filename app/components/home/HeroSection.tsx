@@ -193,34 +193,6 @@ const HeroSection = () => {
                             </motion.a>
                         </div>
                     </motion.div>
-
-                    {/* Stats row */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.8 }}
-                        className="grid grid-cols-3 gap-8 mt-12 pt-5 border-t border-border"
-                    >
-                        {[
-                            { value: "20+", label: "Projects" },
-                            { value: "98%", label: "Satisfaction" },
-                            { value: "2+", label: "Years" },
-                        ].map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.9 + index * 0.1 }}
-                            >
-                                <div className="text-3xl md:text-4xl lg:text-5xl font-display mb-2 number-display">
-                                    {stat.value}
-                                </div>
-                                <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                                    {stat.label}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
                 </div>
             </motion.div>
         </section>
