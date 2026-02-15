@@ -109,7 +109,7 @@ const HeroSection = () => {
                                 delay: 0.2,
                                 ease: [0.4, 0, 0, 1],
                             }}
-                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display leading-[0.9] tracking-tight"
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-display leading-[0.9] tracking-tight"
                         >
                             WE BUILD
                         </motion.h1>
@@ -128,7 +128,7 @@ const HeroSection = () => {
                             DIGITAL
                         </motion.h1>
                     </div>
-                    <div className="overflow-hidden mb-8">
+                    <div className=" mb-8">
                         <motion.h1
                             initial={{ y: 100 }}
                             animate={{ y: 0 }}
@@ -137,7 +137,7 @@ const HeroSection = () => {
                                 delay: 0.4,
                                 ease: [0.4, 0, 0, 1],
                             }}
-                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display leading-[0.9] tracking-tight"
+                            className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-display leading-[0.9] tracking-tight"
                         >
                             EXPERIENCES
                         </motion.h1>

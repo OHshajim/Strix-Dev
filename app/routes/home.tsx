@@ -4,6 +4,7 @@ import PortfolioSection from "~/components/home/PortfolioSection";
 import ServicesSection from "~/components/home/ServicesSection";
 import AboutSection from "~/components/home/AboutSection";
 import ContactSection from "~/components/home/ContactSection";
+import FloatingContactFAB from "~/components/FloatingContactFAB";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -14,12 +15,13 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
    return (
-       <main >
-            <HeroSection />
-            <ServicesSection />
-            <PortfolioSection />
-            <AboutSection />
-            <ContactSection />
+       <main>
+           <HeroSection />
+           <ServicesSection />
+           <PortfolioSection />
+           <AboutSection />
+           <ContactSection />
+           <FloatingContactFAB />
        </main>
    );
 }
