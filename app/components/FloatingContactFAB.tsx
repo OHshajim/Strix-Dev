@@ -7,7 +7,7 @@ const FloatingContactFAB = () => {
     const encodedWhatsAppMessage = encodeURIComponent(
         "Hi! I want to connect with you.",
     );
-    const whatsappUrl = `https://wa.me/+8801518933208?text=${encodedWhatsAppMessage}`;
+    const whatsappUrl = `https://wa.me/+8801882862391?text=${encodedWhatsAppMessage}`;
     // const messengerUrl = `https://m.me/yourpageusername`;
 
     const links = [
