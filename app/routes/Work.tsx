@@ -6,8 +6,8 @@ import WorkCTA from "~/components/work/WorkCTA";
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: "Strix Devs || Work " },
-        { name: "description", content: "Welcome to Strix Devs" },
+        { title: "Strix Devs | Work " },
+        { name: "description", content: "Work History of Strix Devs" },
     ];
 }
 

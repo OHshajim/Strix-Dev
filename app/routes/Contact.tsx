@@ -5,8 +5,8 @@ import { FAQ } from "~/components/home/FAQ";
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: "Strix Devs || Home " },
-        { name: "description", content: "Welcome to Strix Devs" },
+        { title: "Strix Devs | Contact Us " },
+        { name: "description", content: "Contact with Strix Devs" },
     ];
 }
 
