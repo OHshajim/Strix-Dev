@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { services } from "~/Data/data";
+import Header from "../Header";
 
 const ServicesSection = () => {
     const ref = useRef(null);
@@ -14,38 +15,25 @@ const ServicesSection = () => {
             <div className="noise-overlay" />
 
             {/* Large background text */}
-            <motion.div
+            <motion.h1
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 0.02 }}
+                whileInView={{ opacity: 0.1 }}
                 viewport={{ once: true }}
-                className="absolute -left-20 top-1/2 -translate-y-1/2 text-[15rem] font-display leading-none select-none pointer-events-none hidden xl:block whitespace-nowrap"
-                style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
+                className="absolute -right-10 top-1/2 glow-text -translate-y-1/2 text-[16rem] leading-none select-none pointer-events-none hidden xl:block whitespace-nowrap"
+                style={{ writingMode: "sideways-rl", textOrientation: "mixed" }}
             >
                 SERVICES
-            </motion.div>
+            </motion.h1>
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Section header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-20"
-                >
-                    <div className="flex items-center gap-4 mb-4">
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-                            02
-                        </span>
-                        <div className="w-16 h-px bg-foreground/30" />
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-                            What We Do
-                        </span>
-                    </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-display tracking-tight">
-                        Our Services
-                    </h2>
-                </motion.div>
+                <Header
+                    tag="01"
+                    label="What We Build"
+                    titleLine1="End-to-End"
+                    titleLine2="Solutions"
+                    desc="From architecture decisions to final deployment — we own the full stack so you can focus on your product."
+                />
 
                 {/* Services list */}
                 <div ref={ref} className="space-y-0">

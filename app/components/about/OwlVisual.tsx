@@ -117,7 +117,7 @@ const OwlVisual = () => {
 
                     {/* Values */}
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-display tracking-tight mb-10">
+                        <h2 className="text-3xl md:text-4xl  tracking-tight mb-10">
                             Our Values
                         </h2>
                         <div className="space-y-8">
@@ -130,7 +130,7 @@ const OwlVisual = () => {
                                     transition={{ delay: index * 0.1 }}
                                     className="border-l-2 border-foreground/20 pl-6 hover:border-foreground transition-colors"
                                 >
-                                    <h3 className="text-xl font-display mb-2">
+                                    <h3 className="text-xl  mb-2">
                                         {value.title}
                                     </h3>
                                     <p className="text-muted-foreground text-sm">

@@ -11,7 +11,7 @@ const WorkCTA = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-4xl md:text-5xl font-display tracking-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl  tracking-tight mb-6">
                         Have a Project in Mind?
                     </h2>
                     <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">

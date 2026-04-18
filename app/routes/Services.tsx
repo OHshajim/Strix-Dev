@@ -6,8 +6,8 @@ import ServicesSection from "~/components/services/Services";
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: "Strix Dev || Services " },
-        { name: "description", content: "Welcome to Strix Dev" },
+        { title: "Strix Devs || Services " },
+        { name: "description", content: "Welcome to Strix Devs" },
     ];
 }
 

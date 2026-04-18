@@ -2,8 +2,8 @@ import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: "Strix Dev || 404 Not Found" },
-        { name: "description", content: "Welcome to Strix Dev" },
+        { title: "Strix Devs || 404 Not Found" },
+        { name: "description", content: "Welcome to Strix Devs" },
     ];
 }
 export default function NotFound() {

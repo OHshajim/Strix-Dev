@@ -6,15 +6,15 @@ import WorkCTA from "~/components/work/WorkCTA";
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: "Strix Dev || Work " },
-        { name: "description", content: "Welcome to Strix Dev" },
+        { title: "Strix Devs || Work " },
+        { name: "description", content: "Welcome to Strix Devs" },
     ];
 }
 
 
 export default function Work() {
     return (
-        <main>
+        <main className="pt-24">
             <HeroSection />
             <Projects />
             {/* <WorkStats /> */}

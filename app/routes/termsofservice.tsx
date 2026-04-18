@@ -10,15 +10,15 @@ export default function TermsOfService() {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="flex items-center gap-4 mb-8">
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
+                        <span className="text-xs  uppercase tracking-[0.3em] text-muted-foreground">
                             Legal
                         </span>
                         <div className="w-16 h-px bg-foreground/30" />
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-display tracking-tight mb-12">
+                    <h1 className="text-4xl md:text-6xl  tracking-tight mb-12">
                         Terms of Service
                     </h1>
-                    <div className="text-sm font-mono text-muted-foreground mb-12">
+                    <div className="text-sm  text-muted-foreground mb-12">
                         Last updated: January 2026
                     </div>
                 </motion.div>
@@ -29,7 +29,7 @@ export default function TermsOfService() {
                     className="space-y-12"
                 >
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             01 — Agreement to Terms
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -43,12 +43,12 @@ export default function TermsOfService() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             02 — Our Services
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
                         <p className="text-muted-foreground leading-relaxed">
-                            Strix Dev provides web development, design, and
+                            Strix Devs provides web development, design, and
                             related digital services. The specific scope,
                             deliverables, timeline, and pricing for each project
                             will be outlined in a separate agreement or
@@ -57,7 +57,7 @@ export default function TermsOfService() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             03 — Intellectual Property
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -73,7 +73,7 @@ export default function TermsOfService() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             04 — Payment Terms
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -87,7 +87,7 @@ export default function TermsOfService() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             05 — Client Responsibilities
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -101,12 +101,12 @@ export default function TermsOfService() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             06 — Limitation of Liability
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
                         <p className="text-muted-foreground leading-relaxed">
-                            To the maximum extent permitted by law, Strix Dev
+                            To the maximum extent permitted by law, Strix Devs
                             shall not be liable for any indirect, incidental,
                             special, consequential, or punitive damages, or any
                             loss of profits or revenues. Our total liability for
@@ -115,7 +115,7 @@ export default function TermsOfService() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             07 — Termination
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -130,7 +130,7 @@ export default function TermsOfService() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             08 — Governing Law
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -143,7 +143,7 @@ export default function TermsOfService() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             09 — Contact Us
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -151,7 +151,7 @@ export default function TermsOfService() {
                             If you have any questions about these Terms of
                             Service, please contact us at:
                         </p>
-                        <div className="font-mono text-sm">
+                        <div className=" text-sm">
                             <p>Email: shamimweb78@gmail.com</p>
                             <p>Location: Toronto, Canada</p>
                         </div>

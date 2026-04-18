@@ -53,16 +53,16 @@ const ProjectCard = ({ project, index, isInView, hoveredIndex, setHoveredIndex }
                 }
             >
                 <div className="flex items-center gap-4 mb-4">
-                    <span className="text-xs font-mono text-muted-foreground">
+                    <span className="text-xs  text-muted-foreground">
                         {project.year}
                     </span>
                     <div className="w-8 h-px bg-foreground/30" />
-                    <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                    <span className="text-xs  uppercase tracking-wider text-muted-foreground">
                         {project.category}
                     </span>
                 </div>
 
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-display tracking-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl tracking-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">
                     {project.title}
                 </h3>
 
@@ -74,7 +74,7 @@ const ProjectCard = ({ project, index, isInView, hoveredIndex, setHoveredIndex }
                     {project.techStack.map((tech: string) => (
                         <span
                             key={tech}
-                            className="px-3 py-1 text-xs font-mono uppercase tracking-wider border border-border"
+                            className="px-3 py-1 text-xs  uppercase tracking-wider border border-border"
                         >
                             {tech}
                         </span>
@@ -83,7 +83,7 @@ const ProjectCard = ({ project, index, isInView, hoveredIndex, setHoveredIndex }
                 <Link to={project.link} target="_blank" rel="noopener noreferrer">
                     <motion.button
                         whileHover={{ x: 5 }}
-                        className="flex items-center gap-3 text-sm font-mono uppercase tracking-wider group/btn"
+                        className="flex items-center gap-3 text-sm  uppercase tracking-wider group/btn"
                         >
                         <span className="link-underline">Live Link</span>
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />

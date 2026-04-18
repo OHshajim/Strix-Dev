@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowDownRight } from "lucide-react";
+import Header from "../Header";
 
 const HeroSection = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -25,7 +26,7 @@ const HeroSection = () => {
             <div className="noise-overlay" />
 
             {/* Animated corner lines */}
-            <div className="absolute top-0 left-0 w-32 h-32">
+            <div className="absolute top-14 lg:top-0 left-0 w-32 h-32">
                 <motion.div
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -71,14 +72,14 @@ const HeroSection = () => {
             </div>
 
             {/* Floating number */}
-            <motion.div
+            <motion.h1
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.15 }}
+                animate={{ opacity: 0.2 }}
                 transition={{ duration: 1, delay: 1 }}
-                className="absolute right-10 top-1/3 text-[20rem] font-display leading-none select-none pointer-events-none hidden lg:block"
+                className="absolute right-10 top-1/3 text-[24rem] glow-text leading-none select-none pointer-events-none hidden lg:block"
             >
                 01
-            </motion.div>
+            </motion.h1>
 
             {/* Content */}
             <motion.div
@@ -87,17 +88,7 @@ const HeroSection = () => {
             >
                 <div className="max-w-5xl">
                     {/* Status badge */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="flex items-center gap-3 mb-8"
-                    >
-                        <div className="w-2 h-2 bg-foreground animate-pulse" />
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-                            Available for Projects
-                        </span>
-                    </motion.div>
+                    <Header label="Available for Projects"/>
 
                     {/* Main headline - with text reveal effect */}
                     <div className="overflow-hidden mb-4">
@@ -109,7 +100,7 @@ const HeroSection = () => {
                                 delay: 0.2,
                                 ease: [0.4, 0, 0, 1],
                             }}
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-display leading-[0.9] tracking-tight"
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl  leading-[0.9] tracking-tight"
                         >
                             WE BUILD
                         </motion.h1>
@@ -123,7 +114,7 @@ const HeroSection = () => {
                                 delay: 0.3,
                                 ease: [0.4, 0, 0, 1],
                             }}
-                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display leading-[0.9] tracking-tight text-outline-thick"
+                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl  leading-[0.9] tracking-tight text-outline-thick"
                         >
                             DIGITAL
                         </motion.h1>
@@ -137,7 +128,7 @@ const HeroSection = () => {
                                 delay: 0.4,
                                 ease: [0.4, 0, 0, 1],
                             }}
-                            className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-display leading-[0.9] tracking-tight"
+                            className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl  leading-[0.9] tracking-tight"
                         >
                             EXPERIENCES
                         </motion.h1>
@@ -150,7 +141,7 @@ const HeroSection = () => {
                         transition={{ duration: 0.6, delay: 0.6 }}
                         className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-8"
                     >
-                        <p className="text-lg md:text-xl text-muted-foreground max-w-lg font-body leading-relaxed">
+                        <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
                             Smart, secure, and scalable web applications for
                             startups and small businesses. Transforming ideas
                             into powerful digital products.

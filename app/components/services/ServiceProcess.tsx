@@ -1,38 +1,6 @@
 import { motion } from "framer-motion";
+import { steps } from "~/Data/data";
 
-const processSteps = [
-    {
-        step: "01",
-        title: "Discovery",
-        description:
-            "We learn about your business, goals, and target audience.",
-    },
-    {
-        step: "02",
-        title: "Strategy",
-        description: "We create a roadmap and select the right technologies.",
-    },
-    {
-        step: "03",
-        title: "Design",
-        description: "We design intuitive interfaces that users love.",
-    },
-    {
-        step: "04",
-        title: "Development",
-        description: "We build with clean, maintainable code.",
-    },
-    {
-        step: "05",
-        title: "Testing",
-        description: "We rigorously test across devices and browsers.",
-    },
-    {
-        step: "06",
-        title: "Launch",
-        description: "We deploy and provide ongoing support.",
-    },
-];
 const ServiceProcess = () => {
     return (
         <section className="py-20 bg-card relative">
@@ -46,7 +14,7 @@ const ServiceProcess = () => {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-display tracking-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl  tracking-tight mb-6">
                         Our Process
                     </h2>
                     <p className="text-muted-foreground text-lg max-w-2xl">
@@ -55,24 +23,33 @@ const ServiceProcess = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {processSteps.map((step, index) => (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 ">
+                    {steps.map((step, index) => (
                         <motion.div
-                            key={step.step}
+                            key={step.number}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="border-t border-border pt-8"
+                            className="relative group transition-all duration-300 border hover:border-foreground/40 p-8"
                         >
-                            <span className="text-4xl font-display text-muted-foreground/50 mb-4 block">
-                                {step.step}
-                            </span>
-                            <h3 className="text-xl font-display mb-3">
-                                {step.title}
+                            <div className="flex gap-3 items-center my-2 animate-pulse">
+                                <span className="w-20 h-px bg-foreground/40" />
+                                <span className="font-mono text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
+                                    {step.phase}
+                                </span>
+                            </div>
+                            <h3
+                                className="absolute top-4 right-5 glow-text text-5xl font-bold opacity-20 leading-none select-none pointer-events-none transition-opacity duration-300 group-hover:opacity-40"
+                                style={{
+                                    color: "hsl(var(--foreground))",
+                                }}
+                            >
+                                {step.number}
                             </h3>
+                            <h3 className="text-xl  mb-3">{step.title}</h3>
                             <p className="text-muted-foreground text-sm">
-                                {step.description}
+                                {step.desc}
                             </p>
                         </motion.div>
                     ))}

@@ -22,10 +22,10 @@ const WorkStats = () => {
                             transition={{ delay: index * 0.1 }}
                             className="text-center"
                         >
-                            <div className="text-4xl md:text-5xl lg:text-6xl font-display mb-2">
+                            <div className="text-4xl md:text-5xl lg:text-6xl  mb-2">
                                 {stat.value}
                             </div>
-                            <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                            <div className="text-xs  uppercase tracking-[0.2em] text-muted-foreground">
                                 {stat.label}
                             </div>
                         </motion.div>

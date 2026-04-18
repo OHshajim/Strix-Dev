@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -13,41 +13,24 @@ const navLinks = [
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [activeSection, setActiveSection] = useState("home");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const navigate = useNavigate()
     const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
-
-            // Determine active section
-            const sections = navLinks.map((link) => link.href.slice(1));
-            for (const section of sections.reverse()) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    if (rect.top <= 150) {
-                        setActiveSection(section);
-                        break;
-                    }
-                }
-            }
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handleNavClick = (href: string) => {
-        setIsMobileMenuOpen(false);
-        navigate(href);
-    };
+
     const isActive = (href: string) => {
         if (href === "/") return location.pathname === "/";
         return location.pathname.startsWith(href);
     };
+
     return (
         <>
             <motion.nav
@@ -55,10 +38,10 @@ const Navbar = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: [0.4, 0, 0, 1] }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-                    isScrolled ? "glass py-4" : "py-6"
+                    isScrolled ? "glass py-4 glow-border " : "py-6"
                 }`}
             >
-                <div className="container mx-auto px-6 flex items-center justify-between">
+                <div className="lg:container mx-auto px-6 flex items-center justify-between">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3 group">
                         <motion.div
@@ -70,17 +53,17 @@ const Navbar = () => {
                                 className="w-14"
                                 loading="lazy"
                             />
-                            <span className="text-xl font-display tracking-tight">
+                            <span className="text-xl tracking-tight glow-text">
                                 STRIX
-                                <span className="text-muted-foreground font-body font-light ml-1">
-                                    DEV
+                                <span className="text-muted-foreground font-heading font-light ml-1">
+                                    DEVS
                                 </span>
                             </span>
                         </motion.div>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-10">
+                    <div className="hidden md:flex items-center gap-4 lg:gap-10">
                         {navLinks.map((link, index) => (
                             <motion.div
                                 key={link.name}
@@ -93,9 +76,9 @@ const Navbar = () => {
                             >
                                 <Link
                                     to={link.href}
-                                    className={`relative text-xs font-mono uppercase tracking-[0.2em] transition-all duration-300 ${
+                                    className={`relative text-xs lg:text-sm font-header uppercase tracking-[0.2em] transition-all duration-300 ${
                                         isActive(link.href)
-                                            ? "text-foreground"
+                                            ? "text-foreground glow-text"
                                             : "text-muted-foreground hover:text-foreground"
                                     }`}
                                 >
@@ -119,7 +102,10 @@ const Navbar = () => {
                         transition={{ delay: 0.8, duration: 0.5 }}
                         className="hidden md:block"
                     >
-                        <Link to="/contact" className="btn-outline text-xs">
+                        <Link
+                            to="/contact"
+                            className="btn-outline glow-text glow-border text-xs"
+                        >
                             Get in Touch
                         </Link>
                     </motion.div>
@@ -162,7 +148,7 @@ const Navbar = () => {
                                         onClick={() =>
                                             setIsMobileMenuOpen(false)
                                         }
-                                        className={`text-3xl font-display tracking-tight transition-colors ${
+                                        className={`text-3xl font-header tracking-tight transition-colors ${
                                             isActive(link.href)
                                                 ? "text-foreground"
                                                 : "text-muted-foreground"

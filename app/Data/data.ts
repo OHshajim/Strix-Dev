@@ -129,7 +129,6 @@ export const services = [
     },
 ];
 
-
 export const projects = [
     {
         title: "CallBell",
@@ -271,34 +270,39 @@ export const projects = [
 export const team = [
     {
         name: "Shamim Hossain",
-        role: "Founder & Lead Developer",
+        role: "CEO & Founder",
         image: "https://i.ibb.co/Gfqj4gXZ/Shamim.jpg",
-        bio: "Full-stack developer and tech entrepreneur with 3+ years of experience building scalable web applications and leading development teams. Passionate about clean code, modern JS frameworks, and seamless UX.",
-        social: {
-            linkedin:
-                "https://www.linkedin.com/in/shamim-hossain-srabon-4154892a8/",
-            github: "https://github.com/ShamimHossain1",
-        },
-    },
-    {
-        name: "Tanjil Ahmed",
-        role: "Full Stack Developer",
-        image: "https://i.ibb.co.com/PvMGv84j/tanjil.jpg",
-        bio: "Full-stack developer with expertise in both frontend and backend technologies. Skilled in building responsive UIs, designing robust APIs, and creating seamless end-to-end solutions.",
-        social: {
-            linkedin: "https://www.linkedin.com/in/tanjil-ahamed/",
-            github: "https://github.com/tanjilahamed99",
-        },
+        bio: "Vision-driven founder leading Strix Devs with a focus on long-term product quality, strong client relationships, and building technology that actually solves real business problems.",
     },
     {
         name: "Shajim Ahmed",
-        role: "Full Stack Developer",
+        role: "Lead Engineer",
         image: "https://i.ibb.co/F4yQhhb3/Shajim.png",
-        bio: "Full-stack developer specializing in scalable backend systems and interactive frontend applications. Experienced in Node.js, React/Next.js, and optimizing database architectures.",
-        social: {
-            linkedin: "https://www.linkedin.com/in/shajim-ahmed/",
-            github: "https://github.com/OHshajim",
-        },
+        bio: "Leads architecture and backend systems with a strong focus on scalability, performance, and clean engineering practices. Turns complex ideas into reliable production software.",
+    },
+    {
+        name: "Tanjil Ahmed",
+        role: "Full-Stack Developer",
+        image: "https://i.ibb.co.com/PvMGv84j/tanjil.jpg",
+        bio: "Builds seamless end-to-end web experiences, from polished UI to powerful APIs. Passionate about shipping fast without sacrificing code quality.",
+    },
+    {
+        name: "Mirajul Islam Fahim",
+        role: "Frontend Developer",
+        image: "https://i.ibb.co.com/tTB7RnrR/Whats-App-Image-2026-04-18-at-11-31-56-PM.jpg",
+        bio: "Crafts modern, responsive interfaces that feel smooth and intuitive. Focused on performance, accessibility, and pixel-perfect execution.",
+    },
+    {
+        name: "Tanha Amin",
+        role: "UI/UX Designer",
+        image: "https://i.ibb.co.com/vvD21TpJ/team-1.jpg",
+        bio: "Designs clean and user-focused digital experiences. Blends research, usability, and aesthetics to create interfaces people genuinely enjoy using.",
+    },
+    {
+        name: "Ovi Saha",
+        role: "BackEnd Developer",
+        image: "https://i.ibb.co.com/pvV4TqPF/team-1.png",
+        bio: "Supports product delivery across the stack, contributing to new features, optimizations, and continuous improvement of our development workflow.",
     },
 ];
 
@@ -312,19 +316,106 @@ export const contactInfo = [
     {
         icon: MessageCircle,
         label: "WhatsApp",
-        value: "+1 (437) 955-7898",
-        href: "https://wa.me/14165550123",
+        value: "+1 (437) 955-7898 / +880 1882-862391",
+        href: "https://wa.me/+8801882862391",
     },
     {
         icon: Linkedin,
         label: "LinkedIn",
-        value: "Strix Dev",
-        href: "https://www.linkedin.com/company/strix-dev",
+        value: "Strix Devs",
+        href: "https://www.linkedin.com/company/strixdevs",
     },
     {
         icon: MapPin,
         label: "Office",
         value: "Toronto, Canada",
         href: "#",
+    },
+];
+
+export const steps = [
+    {
+        number: "01",
+        phase: "Discovery",
+        title: "Understand Before We Code",
+        desc: "We start by understanding your business, users, and monetization goals. Instead of guessing, we ask the right questions so the product solves real problems from day one.",
+        deliverable: "Product roadmap + clear project scope",
+    },
+    {
+        number: "02",
+        phase: "Planning & Architecture",
+        title: "Build the Blueprint",
+        desc: "We design the full system before development begins — tech stack, database structure, security, scalability, and integrations. This prevents costly rebuilds later.",
+        deliverable: "System architecture + DB schema + API plan",
+    },
+    {
+        number: "03",
+        phase: "UI/UX Design",
+        title: "Design That Converts",
+        desc: "Clean, modern, and conversion-focused interfaces. We design flows that feel simple for users but powerful under the hood.",
+        deliverable: "Wireframes + high-fidelity UI design",
+    },
+    {
+        number: "04",
+        phase: "Development",
+        title: "Build in Fast Iterations",
+        desc: "We develop in short sprints with regular demos and feedback loops. You always know what’s happening without needing to micromanage.",
+        deliverable: "Weekly progress builds + demo walkthroughs",
+    },
+    {
+        number: "05",
+        phase: "Testing & Launch",
+        title: "Go Live the Right Way",
+        desc: "Performance optimization, bug fixing, SEO basics, CI/CD setup, and production deployment. Launch day should feel exciting, not stressful.",
+        deliverable: "Live deployment + documentation + handoff",
+    },
+    {
+        number: "06",
+        phase: "Support & Growth",
+        title: "We Don’t Disappear After Launch",
+        desc: "We stay available for improvements, scaling, new features, and technical support. Your product keeps evolving as your business grows.",
+        deliverable: "Ongoing support + future feature roadmap",
+    },
+];
+export const faqs = [
+    {
+        q: "What services do you actually provide?",
+        a: "We design and build complete web products — SaaS apps, dashboards, admin panels, e-commerce platforms, internal tools, and custom business systems. From idea → design → development → deployment → support. You don’t need to hire multiple people. We handle the full lifecycle.",
+    },
+    {
+        q: "Can you build my idea from scratch?",
+        a: "Yes. Many of our clients start with just an idea and a problem to solve. We help validate the idea, plan the features, design the product, and build the MVP. You don’t need technical knowledge — we guide the entire process.",
+    },
+    {
+        q: "How long does it take to build a product?",
+        a: "Small projects take 2–4 weeks. A serious MVP usually takes 4–8 weeks. Larger platforms can take 2–3 months+. The timeline depends on scope and feedback speed. We always provide a realistic roadmap before starting.",
+    },
+    {
+        q: "How much does a typical project cost?",
+        a: "Most MVP projects fall between $1,000–$5,000 depending on features and complexity. Larger platforms are quoted after discovery. We focus on building the most valuable version first so you don’t overspend early.",
+    },
+    {
+        q: "Do you work with startups and international clients?",
+        a: "Yes — most of our clients are startups, founders, and small companies from the US, Europe, and the Middle East. We work fully remote and communicate through Slack, Notion, and weekly calls.",
+    },
+    {
+        q: "Will I own the source code and product?",
+        a: "100%. You get full ownership of the codebase, repository access, documentation, and deployment credentials. No lock-in, no hidden dependencies.",
+    },
+    {
+        q: "What happens after the project is finished?",
+        a: "We include 30 days of free post-launch support to fix bugs and handle deployment issues. After that, you can hire us on a monthly retainer for maintenance, new features, or scaling support.",
+    },
+    {
+        q: "Can you improve or fix an existing project?",
+        a: "Yes. Many clients come to us with unfinished or messy codebases. We start with a technical audit, explain what’s wrong, and create a safe plan to refactor, stabilize, and continue development.",
+    },
+    {
+        q: "How do payments work?",
+        a: "Smaller projects: 50% upfront, 50% on completion. Larger projects: milestone-based payments. This keeps everything transparent and fair for both sides.",
+    },
+    {
+        q: "Why should we choose you instead of hiring a freelancer?",
+        a: "Because we operate like a long-term technical partner. We think about scalability, performance, security, and maintainability from day one — not just finishing tasks. Our goal is to help you build a product that can grow, not just launch.",
     },
 ];

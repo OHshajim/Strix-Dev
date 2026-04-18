@@ -52,7 +52,7 @@ const ContactForm = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
                     >
-                        <h2 className="text-2xl font-display mb-8">
+                        <h2 className="text-2xl  mb-8">
                             Send us a message
                         </h2>
 
@@ -61,7 +61,7 @@ const ContactForm = () => {
                                 <div>
                                     <label
                                         htmlFor="name"
-                                        className="block text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-3"
+                                        className="block text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-3"
                                     >
                                         Your Name *
                                     </label>
@@ -79,7 +79,7 @@ const ContactForm = () => {
                                 <div>
                                     <label
                                         htmlFor="email"
-                                        className="block text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-3"
+                                        className="block text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-3"
                                     >
                                         Email Address *
                                     </label>
@@ -99,7 +99,7 @@ const ContactForm = () => {
                             <div>
                                 <label
                                     htmlFor="message"
-                                    className="block text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-3"
+                                    className="block text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-3"
                                 >
                                     Project Details *
                                 </label>
@@ -143,7 +143,7 @@ const ContactForm = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
                     >
-                        <h2 className="text-2xl font-display mb-8">
+                        <h2 className="text-2xl  mb-8">
                             Contact Information
                         </h2>
 
@@ -172,7 +172,7 @@ const ContactForm = () => {
                                         <info.icon className="w-4 h-4 text-foreground group-hover:text-background transition-colors" />
                                     </div>
                                     <div>
-                                        <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-1">
+                                        <div className="text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-1">
                                             {info.label}
                                         </div>
                                         <div className="text-sm">
@@ -183,7 +183,7 @@ const ContactForm = () => {
                             ))}
                         </div>
                         <div className="pt-10">
-                            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                            <h4 className="text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-4">
                                 Business Hours
                             </h4>
                             <p className="text-muted-foreground">

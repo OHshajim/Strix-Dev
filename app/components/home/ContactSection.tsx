@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { contactInfo } from "~/Data/data";
 import { SendEmail } from "~/lib/email";
+import Header from "../Header";
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -51,30 +52,13 @@ const ContactSection = () => {
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Section header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-20"
-                >
-                    <div className="flex items-center gap-4 mb-4">
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-                            05
-                        </span>
-                        <div className="w-16 h-px bg-foreground/30" />
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-                            Contact
-                        </span>
-                    </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-display tracking-tight">
-                        Let's Build
-                        <br />
-                        <span className="text-outline-thick">
-                            Something Great
-                        </span>
-                    </h2>
-                </motion.div>
+                <Header
+                    titleLine1="Let's Build"
+                    titleLine2="Something Great"
+                    as="h1"
+                    tag="05"
+                    label="Contact"
+                />
 
                 <div className="grid lg:grid-cols-2 gap-20">
                     {/* Contact form */}
@@ -89,7 +73,7 @@ const ContactSection = () => {
                             <div>
                                 <label
                                     htmlFor="name"
-                                    className="block text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-3"
+                                    className="block text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-3"
                                 >
                                     Your Name
                                 </label>
@@ -109,7 +93,7 @@ const ContactSection = () => {
                             <div>
                                 <label
                                     htmlFor="email"
-                                    className="block text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-3"
+                                    className="block text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-3"
                                 >
                                     Email Address
                                 </label>
@@ -129,7 +113,7 @@ const ContactSection = () => {
                             <div>
                                 <label
                                     htmlFor="message"
-                                    className="block text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-3"
+                                    className="block text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-3"
                                 >
                                     Your Message
                                 </label>
@@ -212,7 +196,7 @@ const ContactSection = () => {
                                         <link.icon className="w-5 h-5 text-foreground group-hover:text-background transition-colors duration-300" />
                                     </div>
                                     <div className="flex-1">
-                                        <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-1">
+                                        <div className="text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-1">
                                             {link.label}
                                         </div>
                                         <div className="text-lg group-hover:translate-x-2 transition-transform duration-300">
@@ -226,7 +210,7 @@ const ContactSection = () => {
 
                         {/* Business hours */}
                         <div className="pt-10">
-                            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                            <h4 className="text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-4">
                                 Business Hours
                             </h4>
                             <p className="text-muted-foreground">

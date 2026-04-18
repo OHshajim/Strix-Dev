@@ -1,79 +1,75 @@
-import { motion } from "framer-motion";
-import { Github, Linkedin } from "lucide-react";
-import { Link } from "react-router";
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useState, useRef } from "react";
 import { team } from "~/Data/data";
+import Header from "../Header";
+import MemberCard from "./MemberCard";
 
 
-const Team = () => {
+const fadeUp = {
+    hidden: { opacity: 0, y: 36 },
+    visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.65,
+            ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+            delay: i * 0.1,
+        },
+    }),
+};
+
+export const Team = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-80px" });
+    const [hovered, setHovered] = useState<number | null>(null);
+
     return (
-        <section className="py-20 relative">
-            <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-16"
-                >
-                    <div className="flex items-center gap-4 mb-4">
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-                            Team
-                        </span>
-                        <div className="w-16 h-px bg-foreground/30" />
-                    </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-display tracking-tight">
-                        Meet Our Team
-                    </h2>
-                </motion.div>
+        <section id="team" className="py-24 relative overflow-hidden" ref={ref}>
+            {/* bg grid */}
+            <div
+                className="pointer-events-none absolute inset-0 opacity-[0.025]"
+                style={{
+                    backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
+                                      linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
+                    backgroundSize: "80px 80px",
+                }}
+            />
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:gap-12 gap-8">
-                    {team.map((member, index) => (
-                        <motion.div
+            {/* large faint background word */}
+            <div
+                className="pointer-events-none absolute -bottom-6 left-0 right-0 flex justify-center select-none overflow-hidden"
+                aria-hidden="true"
+            >
+                <span
+                    className="font-display text-[12vw] font-bold uppercase leading-none whitespace-nowrap"
+                    style={{ color: "hsl(var(--foreground) / 0.03)" }}
+                >
+                    STRIX DEVS
+                </span>
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
+                <Header
+                    tag="Team"
+                    label="The Studio"
+                    titleLine1="Built By"
+                    titleLine2="Builders"
+                    desc="A tight team of engineers who care deeply about craft, clarity, and shipping things that last."
+                />
+
+                {/* ── grid ── */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
+                    {team.map((member, i) => (
+                        <MemberCard
                             key={member.name}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group"
-                        >
-                            <div className="relative overflow-hidden mb-6">
-                                <div className="aspect-square">
-                                    <img
-                                        loading="lazy"
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                    />
-                                </div>
-                                <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                    <Link
-                                        to={member.social.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-10 h-10 border border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
-                                    >
-                                        <Linkedin className="w-4 h-4" />
-                                    </Link>
-                                    <Link
-                                        to={member.social.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-10 h-10 border border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
-                                    >
-                                        <Github className="w-4 h-4" />
-                                    </Link>
-                                </div>
-                                <div className="absolute top-2 right-2 w-6 h-6 border-t border-r border-foreground/40" />
-                            </div>
-                            <h3 className="text-xl font-display mb-1">
-                                {member.name}
-                            </h3>
-                            <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground mb-3">
-                                {member.role}
-                            </p>
-                            <p className="text-sm text-muted-foreground">
-                                {member.bio}
-                            </p>
-                        </motion.div>
+                            member={member}
+                            i={i}
+                            hovered={hovered}
+                            setHovered={setHovered}
+                            isInView={isInView}
+                        />
                     ))}
                 </div>
             </div>

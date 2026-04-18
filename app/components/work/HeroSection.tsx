@@ -16,17 +16,17 @@ const HeroSection = () => {
                     <div className="flex items-center gap-4 mb-6">
                         <Link
                             to="/"
-                            className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground hover:text-foreground transition-colors"
+                            className="text-xs  uppercase tracking-[0.3em] text-muted-foreground hover:text-foreground transition-colors"
                         >
                             Home
                         </Link>
                         <div className="w-8 h-px bg-foreground/30" />
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-foreground">
+                        <span className="text-xs  uppercase tracking-[0.3em] text-foreground">
                             Work
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-6xl lg:text-8xl font-display tracking-tight mb-8">
+                    <h1 className="text-5xl md:text-6xl lg:text-8xl  tracking-tight mb-8">
                         Our Work
                     </h1>
 

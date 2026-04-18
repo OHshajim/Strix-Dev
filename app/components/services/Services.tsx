@@ -28,12 +28,12 @@ const ServicesSection = () => {
                                 <div className="w-14 h-14 border border-border flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-500">
                                     <service.icon className="w-6 h-6 text-foreground group-hover:text-background transition-colors duration-500" />
                                 </div>
-                                <span className="text-xs font-mono text-muted-foreground">
+                                <span className="text-xs  text-muted-foreground">
                                     {service.number}
                                 </span>
                             </div>
 
-                            <h3 className="text-2xl md:text-3xl font-display tracking-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">
+                            <h3 className="text-2xl md:text-3xl  tracking-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">
                                 {service.title}
                             </h3>
 

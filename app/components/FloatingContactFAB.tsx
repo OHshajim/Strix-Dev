@@ -24,7 +24,7 @@ const FloatingContactFAB = () => {
         //     bg: "bg-blue-500",
         // },
         {
-            href: "https://www.linkedin.com/company/strix-dev",
+            href: "https://www.linkedin.com/company/strixdevs",
             icon: Linkedin,
             label: "LinkedIn",
             bg: "bg-blue-700",
@@ -32,7 +32,7 @@ const FloatingContactFAB = () => {
     ];
 
     return (
-        <div className="fixed bottom-10 right-10 flex flex-col items-end gap-3 z-50">
+        <div className="fixed bottom-12 right-12 flex flex-col items-end gap-3 z-50 ">
             <AnimatePresence>
                 {open &&
                     links.map((link, i) => (
@@ -45,9 +45,9 @@ const FloatingContactFAB = () => {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.8 }}
                             transition={{ delay: i * 0.05, duration: 0.2 }}
-                            className={`flex items-center gap-2 ${link.bg} text-white px-4 py-2 rounded-full shadow-lg hover:scale-105 transition-transform font-mono text-xs uppercase tracking-wider`}
+                            className={`flex items-center gap-2 glow-text glow-border ${link.bg} text-white px-4 py-2 rounded-full shadow-lg hover:scale-105 transition-transform  text-sm uppercase tracking-wider`}
                         >
-                            <link.icon className="w-4 h-4" />
+                            <link.icon className="w-5 h-5" />
                             {link.label}
                         </motion.a>
                     ))}
@@ -55,16 +55,16 @@ const FloatingContactFAB = () => {
 
             <motion.button
                 onClick={() => setOpen(!open)}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.3 }}
                 whileTap={{ scale: 0.95 }}
                 animate={{ rotate: open ? 45 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="glass p-2 rounded-full border border-foreground/20 text-foreground"
+                className="glass p-2.5 rounded-full border border-foreground/20 text-foreground glow-text glow-border"
                 aria-label={
                     open ? "Close contact options" : "Open contact options"
                 }
             >
-                <Plus className="w-5 h-5" />
+                <Plus className="w-7 h-7" />
             </motion.button>
         </div>
     );

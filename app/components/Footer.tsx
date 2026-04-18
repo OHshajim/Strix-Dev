@@ -8,18 +8,18 @@ const Footer = () => {
     const socialLinks = [
         {
             icon: Linkedin,
-            href: "https://linkedin.com/company/strixdev",
+            href: "https://linkedin.com/company/strixdevs",
             label: "LinkedIn",
         },
         {
             icon: Twitter,
-            href: "https://twitter.com/strixdev",
+            href: "https://twitter.com/strixdevs",
             label: "Twitter",
         },
-        { icon: Github, href: "https://github.com/strixdev", label: "GitHub" },
+        { icon: Github, href: "https://github.com/strixdevs", label: "GitHub" },
         {
             icon: Instagram,
-            href: "https://instagram.com/strixdev",
+            href: "https://instagram.com/strixdevs",
             label: "Instagram",
         },
     ];
@@ -63,10 +63,10 @@ const Footer = () => {
                                 className="w-14"
                                 loading="lazy"
                             />
-                            <span className="text-xl font-display tracking-tight">
+                            <span className="text-xl tracking-tight">
                                 STRIX
-                                <span className="text-muted-foreground font-body font-light ml-1">
-                                    DEV
+                                <span className="text-muted-foreground glow-text font-heading font-light ml-1">
+                                    DEVS
                                 </span>
                             </span>
                         </motion.div>
@@ -97,7 +97,7 @@ const Footer = () => {
                     {/* Links columns */}
                     {Object.entries(footerLinks).map(([title, links]) => (
                         <div key={title}>
-                            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-6">
+                            <h4 className="text-xs  uppercase tracking-[0.2em] text-muted-foreground mb-6">
                                 {title}
                             </h4>
                             <ul className="space-y-4">
@@ -117,19 +117,19 @@ const Footer = () => {
                 {/* Bottom bar */}
                 <div className="pt-10 border-t border-border">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-xs font-mono text-muted-foreground">
-                            © {currentYear} Strix Dev. All rights reserved.
+                        <p className="text-xs  text-muted-foreground">
+                            © {currentYear} STRIX DEVS. All rights reserved.
                         </p>
                         <div className="flex gap-8">
                             <Link
                                 to="/privacy-policy"
-                                className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+                                className="text-xs  text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 Privacy Policy
                             </Link>
                             <Link
                                 to="/terms-of-service"
-                                className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+                                className="text-xs  text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 Terms of Service
                             </Link>

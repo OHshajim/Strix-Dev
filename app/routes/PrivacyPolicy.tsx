@@ -10,15 +10,15 @@ export default function PrivacyPolicy() {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="flex items-center gap-4 mb-8">
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
+                        <span className="text-xs  uppercase tracking-[0.3em] text-muted-foreground">
                             Legal
                         </span>
                         <div className="w-16 h-px bg-foreground/30" />
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-display tracking-tight mb-12">
+                    <h1 className="text-4xl md:text-6xl  tracking-tight mb-12">
                         Privacy Policy
                     </h1>
-                    <div className="text-sm font-mono text-muted-foreground mb-12">
+                    <div className="text-sm  text-muted-foreground mb-12">
                         Last updated: January 2026
                     </div>
                 </motion.div>
@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
                     className="space-y-12"
                 >
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             01 — Information We Collect
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             02 — How We Use Your Information
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             03 — Cookies & Tracking
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             04 — Data Security
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -85,7 +85,7 @@ export default function PrivacyPolicy() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             05 — Third-Party Services
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             06 — Your Rights
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
                         </p>
                     </section>
                     <section className="space-y-4">
-                        <h2 className="text-xl font-display tracking-tight">
+                        <h2 className="text-xl  tracking-tight">
                             07 — Contact Us
                         </h2>
                         <div className="w-full h-px bg-border mb-4" />
@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
                             If you have any questions about this Privacy Policy,
                             please contact us at:
                         </p>
-                        <div className="font-mono text-sm">
+                        <div className=" text-sm">
                             <p>Email: shamimweb78@gmail.com</p>
                             <p>Location: Toronto, Canada</p>
                         </div>

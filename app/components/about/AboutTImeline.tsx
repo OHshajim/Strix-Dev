@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const milestones = [
-    { year: "2019", event: "Strix Dev founded in Toronto" },
+    { year: "2019", event: "Strix Devs founded in Toronto" },
     { year: "2020", event: "First major enterprise client" },
     { year: "2021", event: "Expanded team to 10 members" },
     { year: "2022", event: "Launched international operations" },
@@ -22,7 +22,7 @@ const AboutTImeline = () => {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-display tracking-tight">
+                    <h2 className="text-4xl md:text-5xl  tracking-tight">
                         Our Journey
                     </h2>
                 </motion.div>
@@ -49,7 +49,7 @@ const AboutTImeline = () => {
                                 <div
                                     className={`flex-1 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}
                                 >
-                                    <span className="text-4xl font-display text-muted-foreground/50">
+                                    <span className="text-4xl  text-muted-foreground/50">
                                         {milestone.year}
                                     </span>
                                     <p className="text-lg mt-2">

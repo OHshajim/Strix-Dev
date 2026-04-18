@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
+import Header from "../Header";
 
 const benefits = [
     "Cutting-edge technology stack",
@@ -22,42 +23,23 @@ const AboutSection = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 0.05 }}
                 viewport={{ once: true }}
-                className="absolute right-0 top-1/3 text-[12rem] font-display leading-none select-none pointer-events-none hidden xl:block"
+                className="absolute right-0 top-1/3 text-[12rem]  leading-none select-none pointer-events-none hidden xl:block"
             >
                 ABOUT
             </motion.div>
 
             <div className="container mx-auto px-6 relative z-10">
-                {/* Section header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-20"
-                >
-                    <div className="flex items-center gap-4 mb-4">
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-                            04
-                        </span>
-                        <div className="w-16 h-px bg-foreground/30" />
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground">
-                            About Us
-                        </span>
-                    </div>
-                </motion.div>
-
-                <div className="grid lg:grid-cols-2 gap-20 items-start">
+                <div className="flex max-lg:flex-col gap-20 items-start">
                     {/* Left side - Visual */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative"
+                        className="relative w-full max-w-lg"
                     >
                         {/* Geometric owl - minimal lines */}
-                        <div className="relative aspect-square max-w-md mx-auto">
+                        <div className="relative aspect-square">
                             <svg
                                 viewBox="0 0 280 280"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -145,17 +127,16 @@ const AboutSection = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display tracking-tight mb-8">
-                            Why Choose
-                            <br />
-                            <span className="text-outline-thick">
-                                Strix Dev
-                            </span>
-                            ?
-                        </h2>
+                        <Header
+                            titleLine1="Why Choose"
+                            titleLine2="Strix Devs ?"
+                            label="About Us"
+                            as="h1"
+                            tag="04"
+                        />
 
                         <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                            Strix Dev is a smart, professional, and reliable web
+                            Strix Devs is a smart, professional, and reliable web
                             development agency dedicated to helping startups and
                             small businesses succeed in the digital landscape.
                         </p>
@@ -196,7 +177,7 @@ const AboutSection = () => {
                             }}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="btn-primary inline-flex items-center gap-3"
+                            className="btn-primary inline-flex items-center gap-3 glow-border"
                         >
                             <span>Work With Us</span>
                             <ArrowDownRight className="w-4 h-4" />
