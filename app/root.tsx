@@ -14,87 +14,101 @@ import CustomCursor from "./components/CustomCursor";
 import Footer from "./components/Footer";
 
 /* ─── Site-wide SEO constants ─────────────────────────────────── */
-const SITE_URL    = "https://yourdomain.com";          // ← replace
-const COMPANY     = "YourCompany";                      // ← replace
-const TAGLINE     = "We Build Software That Scales";    // ← replace
+const SITE_URL = "https://strixdevs.com";
+const COMPANY = "Strix Devs";
+const TAGLINE = "We Build Scalable Web Applications";
 const DESCRIPTION =
-    "YourCompany is a full-stack software development studio specializing in " +
-    "React, Next.js, Node.js, and cloud-native architectures. We design, build, " +
-    "and ship production-grade web applications for startups and enterprises.";
-const OG_IMAGE    = "https://yourdomain.com/og-image.png"; // 1200×630 recommended
-const TWITTER     = "@yourhandle";                      // ← replace or remove
+    "Strix Devs is a full-stack software development studio building high-performance web applications, SaaS platforms, and custom business systems using React, Next.js, Node.js and cloud infrastructure. We help startups and companies turn ideas into production-ready products.";
 
-/* ─── Route meta export (React Router v7 pattern) ────────────── */
+const OG_IMAGE = "https://i.ibb.co.com/Z189FpgK/strixdevs.png";
+const TWITTER = "@strixdevs";
+
+/* ─── META ─────────────────────────────────────────────────────── */
 export function meta(): Route.MetaDescriptors {
     return [
         { title: `${COMPANY} — ${TAGLINE}` },
-        { name: "description",        content: DESCRIPTION },
-        { name: "robots",             content: "index, follow" },
-        { name: "googlebot",          content: "index, follow, max-snippet:-1, max-image-preview:large" },
 
-        /* ── Keywords ── */
+        { name: "description", content: DESCRIPTION },
+
+        { name: "robots", content: "index, follow" },
         {
-            name: "Stix Devs",
+            name: "googlebot",
+            content: "index, follow, max-snippet:-1, max-image-preview:large",
+        },
+
+        { name: "author", content: COMPANY },
+        { name: "geo.region", content: "BD" },
+        { name: "geo.placename", content: "Dhaka" },
+        { name: "geo.position", content: "23.8103;90.4125" },
+        { name: "ICBM", content: "23.8103, 90.4125" },
+
+        /* ── Keywords (FIXED) ── */
+        {
+            name: "keywords",
             content: [
-                "software development company",
-                "full stack development",
-                "React developer",
-                "Next.js agency",
-                "Node.js backend",
+                "Strix Devs",
+                "software development agency",
                 "web application development",
-                "software studio",
-                "custom software",
-                "startup software partner",
-                COMPANY,
+                "SaaS development",
+                "React developers",
+                "Next.js agency",
+                "Node.js development",
+                "custom software development",
+                "startup tech partner",
+                "full stack development company",
+                "hire web developers",
             ].join(", "),
         },
 
         /* ── Open Graph ── */
-        { property: "og:type",        content: "website" },
-        { property: "og:url",         content: SITE_URL },
-        { property: "og:site_name",   content: COMPANY },
-        { property: "og:title",       content: `${COMPANY} — ${TAGLINE}` },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: SITE_URL },
+        { property: "og:site_name", content: COMPANY },
+        { property: "og:title", content: `${COMPANY} — ${TAGLINE}` },
         { property: "og:description", content: DESCRIPTION },
-        { property: "og:image",       content: OG_IMAGE },
+        { property: "og:image", content: OG_IMAGE },
         { property: "og:image:width", content: "1200" },
-        { property: "og:image:height",content: "630" },
-        { property: "og:image:alt",   content: `${COMPANY} preview` },
-        { property: "og:locale",      content: "en_US" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: `${COMPANY} preview` },
+        { property: "og:locale", content: "en_US" },
 
-        /* ── Twitter card ── */
-        { name: "twitter:card",       content: "summary_large_image" },
-        { name: "twitter:site",       content: TWITTER },
-        { name: "twitter:creator",    content: TWITTER },
-        { name: "twitter:title",      content: `${COMPANY} — ${TAGLINE}` },
-        { name: "twitter:description",content: DESCRIPTION },
-        { name: "twitter:image",      content: OG_IMAGE },
+        /* ── Twitter ── */
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: TWITTER },
+        { name: "twitter:creator", content: TWITTER },
+        { name: "twitter:title", content: `${COMPANY} — ${TAGLINE}` },
+        { name: "twitter:description", content: DESCRIPTION },
+        { name: "twitter:image", content: OG_IMAGE },
 
         /* ── Canonical ── */
         { tagName: "link", rel: "canonical", href: SITE_URL },
     ];
 }
 
-/* ─── Layout ─────────────────────────────────────────────────── */
+/* ─── LAYOUT ─────────────────────────────────────────────────── */
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" dir="ltr">
+        <html lang="en">
             <head>
                 <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
 
-                {/* Favicon set */}
-                <link rel="icon"             href="/favicon.ico" sizes="any" />
-                <link rel="icon"             href="/favicon.svg" type="image/svg+xml" />
-                <link rel="apple-touch-icon" href="https://i.ibb.co.com/WNK8bxSp/logo.png" />
-
-                {/* Preconnect for faster third-party loads */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-                {/* Theme color (browser chrome on mobile) */}
+                {/* UX + SEO */}
                 <meta name="theme-color" content="#0a0a0a" />
+                <meta name="format-detection" content="telephone=no" />
 
-                {/* Structured data — Organization schema */}
+                {/* Favicon */}
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+                <link
+                    rel="apple-touch-icon"
+                    href="https://i.ibb.co.com/Z189FpgK/strixdevs.png"
+                />
+
+                {/* ── Organization Schema ── */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -103,18 +117,61 @@ export function Layout({ children }: { children: React.ReactNode }) {
                             "@type": "Organization",
                             name: COMPANY,
                             url: SITE_URL,
-                            logo: "https://i.ibb.co.com/WNK8bxSp/logo.png",
+                            logo: OG_IMAGE,
                             description: DESCRIPTION,
+                            email: "ajshajimmax@gmail.com",
+                            foundingDate: "2024",
+                            areaServed: "Worldwide",
+                            contactPoint: {
+                                "@type": "ContactPoint",
+                                contactType: "sales",
+                                email: "ajshajimmax@gmail.com",
+                            },
                             sameAs: [
-                                "https://github.com/yourhandle",     // ← replace
-                                "https://linkedin.com/company/yourco", // ← replace
-                                "https://twitter.com/yourhandle",    // ← replace
+                                "https://linkedin.com/company/strixdevs",
+                                "https://twitter.com/strixdevs",
+                                "https://github.com/strixdevs",
                             ],
                         }),
                     }}
                 />
 
-                {/* Structured data — WebSite schema (enables Google sitelinks search) */}
+                {/* ── Local Business Schema ── */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "ProfessionalService",
+                            name: COMPANY,
+                            url: SITE_URL,
+                            image: OG_IMAGE,
+                            telephone: "+881518933208",
+                            priceRange: "$$",
+                            address: {
+                                "@type": "PostalAddress",
+                                addressCountry: "BD",
+                                addressLocality: "Dhaka",
+                            },
+                            geo: {
+                                "@type": "GeoCoordinates",
+                                latitude: 23.8103,
+                                longitude: 90.4125,
+                            },
+                            serviceType: [
+                                "Web Development",
+                                "E-Commerce Development",
+                                "SaaS Development",
+                                "Custom Web App",
+                                "UI/UX Design",
+                                "API Development",
+                                "Web Support & Maintenance",
+                            ],
+                        }),
+                    }}
+                />
+
+                {/* ── Website Schema ── */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -123,6 +180,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                             "@type": "WebSite",
                             name: COMPANY,
                             url: SITE_URL,
+                            potentialAction: {
+                                "@type": "SearchAction",
+                                target: `${SITE_URL}/?q={search_term_string}`,
+                                "query-input":
+                                    "required name=search_term_string",
+                            },
                         }),
                     }}
                 />
@@ -130,6 +193,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Meta />
                 <Links />
             </head>
+
             <body>
                 <Navbar />
                 {children}
@@ -142,7 +206,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     );
 }
 
-/* ─── App ─────────────────────────────────────────────────────── */
+/* ─── APP ─────────────────────────────────────────────────────── */
 export default function App() {
     return (
         <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -151,10 +215,10 @@ export default function App() {
     );
 }
 
-/* ─── Error boundary ─────────────────────────────────────────── */
+/* ─── ERROR BOUNDARY ─────────────────────────────────────────── */
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     let message = "Something went wrong";
-    let details = "An unexpected error occurred. Please try again.";
+    let details = "Unexpected error occurred.";
     let is404 = false;
     let stack: string | undefined;
 
@@ -162,7 +226,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         is404 = error.status === 404;
         message = is404 ? "Page not found" : `Error ${error.status}`;
         details = is404
-            ? "The page you're looking for doesn't exist or has been moved."
+            ? "This page doesn’t exist or was moved."
             : error.statusText || details;
     } else if (import.meta.env.DEV && error instanceof Error) {
         details = error.message;
@@ -172,26 +236,21 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     return (
         <main className="min-h-screen flex items-center justify-center p-8">
             <div className="max-w-lg text-center">
-                {/* Semantic h1 — important for crawlers hitting broken URLs */}
                 <h1 className="text-6xl font-bold text-primary mb-4">
                     {is404 ? "404" : "500"}
                 </h1>
-                <h2 className="text-2xl font-semibold text-foreground mb-3">
-                    {message}
-                </h2>
-                <p className="text-muted-foreground mb-8 leading-relaxed">
-                    {details}
-                </p>
+                <h2 className="text-2xl font-semibold mb-3">{message}</h2>
+                <p className="text-muted-foreground mb-8">{details}</p>
+
                 <a
                     href="/"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium transition-opacity hover:opacity-90"
+                    className="px-6 py-3 rounded-lg bg-primary text-white"
                 >
-                    ← Back to home
+                    Go Home
                 </a>
 
-                {/* Dev-only stack trace */}
                 {stack && (
-                    <pre className="mt-8 w-full p-4 rounded-lg bg-muted text-left text-xs overflow-x-auto">
+                    <pre className="mt-8 text-xs text-left bg-muted p-4 overflow-x-auto">
                         <code>{stack}</code>
                     </pre>
                 )}
